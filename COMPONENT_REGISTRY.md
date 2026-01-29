@@ -55,8 +55,8 @@ npx shadcn@latest add [component-name]
 
 | Component | File | Props | Notes |
 |-----------|------|-------|-------|
-| StaggerContainer | `StaggerContainer.tsx` | `delay`, `staggerDelay`, `viewport` | Staggers children animations |
-| ScrollReveal | `ScrollReveal.tsx` | `animation`, `delay`, `viewport` | Single element reveal |
+| StaggerContainer | `StaggerContainer.tsx` | `delay`, `staggerDelay`, `viewportPreset` | Staggers children animations |
+| ScrollReveal | `ScrollReveal.tsx` | `animation`, `delay`, `viewportPreset` | Single element reveal |
 
 ### Animation Types for ScrollReveal
 - `fadeInUp` (default)
@@ -65,7 +65,7 @@ npx shadcn@latest add [component-name]
 - `fadeInRight`
 - `scaleIn`
 
-### Viewport Options
+### Viewport Presets
 - `default` — Trigger at -100px from viewport
 - `eager` — Trigger at -50px
 - `lazy` — Trigger at -200px

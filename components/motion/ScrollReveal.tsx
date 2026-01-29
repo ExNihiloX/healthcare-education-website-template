@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, type HTMLMotionProps, type Variants } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { fadeInUp, fadeInDown, fadeInLeft, fadeInRight, scaleIn } from '@/lib/motion/variants';
 import { viewportSettings } from '@/lib/motion/config';
 import { cn } from '@/lib/utils';
@@ -15,12 +15,12 @@ const animations: Record<AnimationType, Variants> = {
   scaleIn,
 };
 
-interface ScrollRevealProps extends HTMLMotionProps<'div'> {
+interface ScrollRevealProps {
   children: React.ReactNode;
   className?: string;
   animation?: AnimationType;
   delay?: number;
-  viewport?: 'default' | 'eager' | 'lazy';
+  viewportPreset?: 'default' | 'eager' | 'lazy';
   as?: 'div' | 'section' | 'article' | 'aside' | 'header' | 'footer';
 }
 
@@ -29,9 +29,8 @@ export function ScrollReveal({
   className,
   animation = 'fadeInUp',
   delay = 0,
-  viewport = 'default',
+  viewportPreset = 'default',
   as = 'div',
-  ...props
 }: ScrollRevealProps) {
   const Component = motion[as];
 
@@ -40,10 +39,9 @@ export function ScrollReveal({
       variants={animations[animation]}
       initial="hidden"
       whileInView="show"
-      viewport={viewportSettings[viewport]}
+      viewport={viewportSettings[viewportPreset]}
       transition={{ delay }}
       className={cn(className)}
-      {...props}
     >
       {children}
     </Component>

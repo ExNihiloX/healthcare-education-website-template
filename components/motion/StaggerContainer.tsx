@@ -1,16 +1,15 @@
 'use client';
 
-import { motion, type HTMLMotionProps } from 'framer-motion';
-import { staggerContainer } from '@/lib/motion/variants';
+import { motion } from 'framer-motion';
 import { viewportSettings } from '@/lib/motion/config';
 import { cn } from '@/lib/utils';
 
-interface StaggerContainerProps extends HTMLMotionProps<'div'> {
+interface StaggerContainerProps {
   children: React.ReactNode;
   className?: string;
   delay?: number;
   staggerDelay?: number;
-  viewport?: 'default' | 'eager' | 'lazy';
+  viewportPreset?: 'default' | 'eager' | 'lazy';
 }
 
 export function StaggerContainer({
@@ -18,8 +17,7 @@ export function StaggerContainer({
   className,
   delay = 0.1,
   staggerDelay = 0.1,
-  viewport = 'default',
-  ...props
+  viewportPreset = 'default',
 }: StaggerContainerProps) {
   return (
     <motion.div
@@ -35,9 +33,8 @@ export function StaggerContainer({
       }}
       initial="hidden"
       whileInView="show"
-      viewport={viewportSettings[viewport]}
+      viewport={viewportSettings[viewportPreset]}
       className={cn(className)}
-      {...props}
     >
       {children}
     </motion.div>
