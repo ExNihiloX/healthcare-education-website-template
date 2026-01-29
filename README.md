@@ -18,7 +18,7 @@ A production-ready Next.js 15 template for building Healthcare and Education web
 
 ```bash
 # Clone the template
-git clone https://github.com/yourusername/healthcare-education-website-template.git my-website
+git clone https://github.com/ExNihiloX/healthcare-education-website-template.git my-website
 cd my-website
 
 # Remove template history
