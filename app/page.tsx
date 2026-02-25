@@ -1,29 +1,28 @@
 import { Metadata } from 'next';
 import { siteConfig } from '@/data/content/site';
+import { HeroSection } from '@/components/sections/HeroSection';
+import { StatsSection } from '@/components/sections/StatsSection';
+import { AboutPreviewSection } from '@/components/sections/AboutPreviewSection';
+import { FeaturesSection } from '@/components/sections/FeaturesSection';
+import { ProgramsSection } from '@/components/sections/ProgramsSection';
+import { CTASection } from '@/components/sections/CTASection';
+import { NewsSection } from '@/components/sections/NewsSection';
 
 export const metadata: Metadata = {
-  title: siteConfig.name,
+  title: `${siteConfig.name} — ${siteConfig.tagline}`,
   description: siteConfig.description,
 };
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="py-24 md:py-32">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-              {siteConfig.name}
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground">
-              {siteConfig.description}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Add more sections here */}
+      <HeroSection />
+      <StatsSection />
+      <AboutPreviewSection />
+      <ProgramsSection />
+      <FeaturesSection />
+      <NewsSection />
+      <CTASection />
     </>
   );
 }

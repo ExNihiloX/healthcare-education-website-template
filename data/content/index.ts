@@ -12,8 +12,16 @@ export type { SiteConfig } from './site';
 export { mainNav, footerNav, headerCTA } from './navigation';
 export type { NavItem, FooterSection } from './navigation';
 
-// Add more exports as you create content files:
-// export { programs, getProgramBySlug, getAllPrograms } from './programs';
-// export { team, getTeamMemberBySlug } from './team';
-// export { testimonials, getFeaturedTestimonials } from './testimonials';
-// export { faq, getFaqByCategory } from './faq';
+// Programmes
+export { programs, getAllPrograms, getFeaturedPrograms, getProgramBySlug, getProgramsByDepartment } from './programs';
+export type { Program } from './programs';
+
+// Homepage
+export {
+  heroContent,
+  stats,
+  features,
+  ctaContent,
+  aboutPreview,
+} from './homepage';
+export type { HeroContent, Stat, Feature, CTAContent } from './homepage';
